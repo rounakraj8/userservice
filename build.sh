@@ -29,4 +29,5 @@ builddocker() {
 
 build userservice
 
-builddocker
+#Now building image in config.yml of circleci
+#builddocker
