@@ -24,6 +24,6 @@ jobs:
                     TAG=0.1.$CIRCLE_BUILD_NUM
                     docker build -f userservice/Dockerfile -t rounakraj8/userservice:$TAG -t rounakraj8/userservice:latest .
                     docker login -u $DOCKER_USER -p $DOCKER_PASS
-                    docker push rounakraj8/userservice:latest
+                    docker push rounakraj8/userservice
                 fi
              
