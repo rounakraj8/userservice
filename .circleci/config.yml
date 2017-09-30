@@ -16,7 +16,11 @@ jobs:
                 cp build/$CIRCLE_PROJECT_REPONAME/config.sh build
                 cd build
                 ./build.sh
-        - run: |
-          TAG=0.1.$CIRCLE_BUILD_NUM
-          docker login -u $DOCKER_USER -p $DOCKER_PASS
-          docker push rounakraj8/userservice:$TAG
+        - run:
+             name: Push image to Dockerhub
+             shell: /bin/bash
+             command: |
+                TAG=0.1.$CIRCLE_BUILD_NUM
+                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker push rounakraj8/userservice:$TAG
+             
