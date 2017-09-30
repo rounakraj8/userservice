@@ -27,7 +27,7 @@ jobs:
                     
                     # Tag and push image for each additional tag
                     for tag in {${TAG},latest}; do  
-                      docker tag $IMAGE_NAME ${repoName}:${tag}
+                      docker tag rounakraj8/userservice rounakraj8/userservice:${tag}
                       docker push rounakraj8/userservice:${tag}
                     done
                 fi
