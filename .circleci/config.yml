@@ -1,0 +1,22 @@
+version: 2
+jobs:
+   build:
+     working_directory: ~/build
+     machine:
+        image: circleci/classic:edge
+     steps:
+        - checkout:
+            path: $CIRCLE_PROJECT_REPONAME
+        - run:
+             name: Build userservice
+             shell: /bin/bash
+             command: |
+                cd ~
+                cp build/$CIRCLE_PROJECT_REPONAME/build.sh build
+                cp build/$CIRCLE_PROJECT_REPONAME/config.sh build
+                cd build
+                ./build.sh
+        - run: |
+          TAG=0.1.$CIRCLE_BUILD_NUM
+          docker login -u $DOCKER_USER -p $DOCKER_PASS
+          docker push rounakraj8/userservice:$TAG
