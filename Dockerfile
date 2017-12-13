@@ -1,14 +1,4 @@
-# Ubuntu base image
-FROM ubuntu
-MAINTAINER Rounak Raj
-
-#download oracle jdk
-COPY /jdk1.8.0_131 /home/jdk1.8.0_131
-
-# set path
-ENV JAVA_HOME /home/jdk1.8.0_131
-
-ENV PATH $PATH:$JAVA_HOME/bin
+FROM rounakraj8/jdk-oracle:8u131
 
 ENV PROFILE $PROFILE
 
