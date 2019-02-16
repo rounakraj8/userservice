@@ -21,7 +21,7 @@ public class AuthenticationController {
 	@Autowired
 	private AuthenticationService service;
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST, consumes = "application/pdf")
+	@RequestMapping(value = "/login", method = RequestMethod.POST, consumes = "application/json")
 	public void authenticateUser(@RequestBody Map<String, String> user, HttpServletResponse response)
 			throws UnsupportedEncodingException, AuthenticationException {
 		String userName = user.get("username");
