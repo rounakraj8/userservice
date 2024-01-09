@@ -22,4 +22,7 @@ Go to browser and type http://localhost:8085/status
 Cheers, if you get "Userservice is UP" message.
 
 
+Added snorkell to test
+
+
  
